@@ -14,9 +14,10 @@ def unzip(zipped_file, target_dir='.'):
         zip_ref.extractall(target_dir)
 
 if __name__ == "__main__":
+    urlbase = "https://raw.githubusercontent.com"
+    repository = "gordon-cs/cps121/main/labs/lab08"
     zip = "lab08-src.zip"
-    ZIPURL = f"https://github.com/gordon-cs/cps121/blob/main/labs/lab08/{zip}"
-    download_url(ZIPURL, zip)
+    download_url(f"{urlbase}/{repository}/{zip}", zip)
     unzip(zip)
     f = "dotests.py"
     py_compile.compile(f, f+'c')
